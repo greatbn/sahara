@@ -81,6 +81,10 @@ class Cluster(mb.SaharaBase):
                                     backref="clusters", lazy='joined')
     shares = sa.Column(st.JsonListType())
     is_public = sa.Column(sa.Boolean())
+    is_autoscale = sa.Column(sa.Boolean())
+    max_cpu = sa.Column(sa.Integer())
+    max_ram = sa.Column(sa.Integer())
+
     is_protected = sa.Column(sa.Boolean())
     domain_name = sa.Column(sa.String(255))
 
