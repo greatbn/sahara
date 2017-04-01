@@ -191,9 +191,9 @@ class ConductorManager(db_base.Base):
         merged_values['management_private_key'] = private_key
         merged_values['management_public_key'] = public_key
 
-        merged_values['is_autoscale'] = context.is_autoscale
-        merged_values['max_cpu'] = context.max_cpu
-        merged_values['max_ram'] = context.max_ram
+        merged_values['is_autoscale'] = values['is_autoscale']
+        merged_values['max_cpu'] = values['max_cpu']
+        merged_values['max_ram'] = values['max_ram']
 
         cluster_template_id = values.get('cluster_template_id')
         c_tmpl = None
