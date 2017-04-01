@@ -97,6 +97,15 @@ CLUSTER_TEMPLATE_SCHEMA = {
         "is_public": {
             "type": ["boolean", "null"],
         },
+        "is_autoscale": {
+            "type": ["boolean", "null"]
+        },
+        "max_cpu": {
+            "type": ["integer", 0]
+        },
+        "max_ram": {
+            "type": ["integer", 0]
+        },
         "is_protected": {
             "type": ["boolean", "null"],
         },

@@ -35,6 +35,15 @@ def _build_cluster_schema():
             "type": "string",
             "format": "valid_keypair_name",
         },
+        "is_autoscale": {
+            "type": "boolean"
+        },
+        "max_cpu": {
+            "type": "integer"
+        },
+        "max_ram": {
+            "type": "integer"
+        },
         "cluster_template_id": {
             "type": "string",
             "format": "uuid",
@@ -65,6 +74,15 @@ CLUSTER_UPDATE_SCHEMA = {
         },
         "is_public": {
             "type": ["boolean", "null"],
+        },
+        "is_autoscale": {
+            "type": ["boolean", "null"]
+        },
+        "max_cpu": {
+            "type": ["integer", "0"]
+        },
+        "max_ram": {
+            "type": ["integer", "0"]
         },
         "is_protected": {
             "type": ["boolean", "null"],

@@ -38,7 +38,10 @@ CLUSTER_DEFAULTS = {
     "rollback_info": {},
     "sahara_info": {},
     "is_public": False,
-    "is_protected": False
+    "is_protected": False,
+    "is_autoscale": False,
+    "max_cpu": 0,
+    "max_ram": 0
 }
 
 NODE_GROUP_DEFAULTS = {
@@ -187,6 +190,10 @@ class ConductorManager(db_base.Base):
         private_key, public_key = crypto.generate_key_pair()
         merged_values['management_private_key'] = private_key
         merged_values['management_public_key'] = public_key
+
+        merged_values['is_autoscale'] = context.is_autoscale
+        merged_values['max_cpu'] = context.max_cpu
+        merged_values['max_ram'] = context.max_ram
 
         cluster_template_id = values.get('cluster_template_id')
         c_tmpl = None
