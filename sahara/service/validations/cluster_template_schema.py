@@ -106,6 +106,12 @@ CLUSTER_TEMPLATE_SCHEMA = {
         "max_ram": {
             "type": ["integer", 0]
         },
+        "min_cpu": {
+            "type": ["integer", 0]
+        },
+        "min_ram": {
+            "type": ["integer", 0]
+        },
         "is_protected": {
             "type": ["boolean", "null"],
         },

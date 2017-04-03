@@ -44,6 +44,12 @@ def _build_cluster_schema():
         "max_ram": {
             "type": "integer"
         },
+        "min_cpu": {
+            "type": "integer"
+        },
+        "min_ram": {
+            "type": "integer"
+        },
         "cluster_template_id": {
             "type": "string",
             "format": "uuid",
@@ -82,6 +88,12 @@ CLUSTER_UPDATE_SCHEMA = {
             "type": ["integer", "0"]
         },
         "max_ram": {
+            "type": ["integer", "0"]
+        },
+        "min_cpu": {
+            "type": ["integer", "0"]
+        },
+        "min_ram": {
             "type": ["integer", "0"]
         },
         "is_protected": {

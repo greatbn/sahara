@@ -41,7 +41,9 @@ CLUSTER_DEFAULTS = {
     "is_protected": False,
     "is_autoscale": False,
     "max_cpu": 0,
-    "max_ram": 0
+    "max_ram": 0,
+    "min_cpu": 0,
+    "min_ram": 0
 }
 
 NODE_GROUP_DEFAULTS = {
@@ -194,7 +196,8 @@ class ConductorManager(db_base.Base):
         merged_values['is_autoscale'] = values['is_autoscale']
         merged_values['max_cpu'] = values['max_cpu']
         merged_values['max_ram'] = values['max_ram']
-
+        merged_values['max_cpu'] = values['min_cpu']
+        merged_values['max_ram'] = values['min_ram']
         cluster_template_id = values.get('cluster_template_id')
         c_tmpl = None
 
