@@ -36,3 +36,7 @@ def upgrade():
         'max_cpu', sa.Integer(), nullable=True))
     op.add_column('clusters', sa.Column(
         'max_ram', sa.Integer(), nullable=True))
+    op.add_column('clusters', sa.Column(
+        'min_cpu', sa.Integer(), nullable=True))
+    op.add_column('clusters', sa.Column(
+        'min_ram', sa.Integer(), nullable=True))
